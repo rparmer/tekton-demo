@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: sample-chart
-      version: "0.0.1" # deploy specific version
+      version: "0.0.2" # deploy specific version
       sourceRef:
         kind: HelmRepository
         name: tekton-demo
