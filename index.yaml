@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   sample-chart:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2022-10-03T19:23:55.608311856Z"
+    description: A Helm chart for Kubernetes
+    digest: 8fd8c213a12df6ad7748872a463395922ac871fa185ddf8fcfeb596337a61ea3
+    name: sample-chart
+    type: application
+    urls:
+    - https://rparmer.github.io/tekton-demo/sample-chart-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.2-rc.1
-    created: "2022-10-03T19:20:30.350514807Z"
+    created: "2022-10-03T19:23:55.606914492Z"
     description: A Helm chart for Kubernetes
     digest: bed010a774076d4c1ce44d376345cfb18005c6e7f1cab79e6016923e7ea60400
     name: sample-chart
@@ -13,7 +23,7 @@ entries:
     version: 0.0.2-rc.1
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-10-03T19:20:30.349814476Z"
+    created: "2022-10-03T19:23:55.605105175Z"
     description: A Helm chart for Kubernetes
     digest: baba4ee1171bff1f8eb0155694d865e0970a3e0b9640fbaa3d8bb8ec2ce8bfb7
     name: sample-chart
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://rparmer.github.io/tekton-demo/sample-chart-0.0.1.tgz
     version: 0.0.1
-generated: "2022-10-03T19:20:30.348918842Z"
+generated: "2022-10-03T19:23:55.601708177Z"
