@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://github.com/weavegitops/tekton-demo.git # IMPORTANT replace with https url to your forked repo
+  url: https://github.com/rparmer/tekton-demo.git # IMPORTANT replace with https url to your forked repo
   ref:
     branch: main
 ---
@@ -67,34 +67,34 @@ spec:
   #
   # Here is an example patch for an ingress that will use letsencrypt for tls
   #
-  # patches:
-  #   - patch: |-
-  #       apiVersion: networking.k8s.io/v1
-  #       kind: Ingress
-  #       metadata:
-  #         name: sample-ci-el-ingress
-  #         namespace: default
-  #         annotations:
-  #           cert-manager.io/cluster-issuer: letsencrypt-prod
-  #       spec:
-  #         tls:
-  #         - hosts:
-  #           - ${ci_event_listerner_ingress_host}
-  #           secretName: sample-ci-el-ingress-tls
-  #         rules:
-  #         - host: ${ci_event_listerner_ingress_host}
-  #           http:
-  #             paths:
-  #             - path: /
-  #               pathType: Prefix
-  #               backend:
-  #                 service:
-  #                   name: el-sample-ci-event-listener
-  #                   port:
-  #                     name: http-listener
-  #     target:
-  #       kind: Ingress
-  #       name: sample-ci-el-ingress
+  patches:
+    - patch: |-
+        apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        metadata:
+          name: sample-ci-el-ingress
+          namespace: default
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt
+        spec:
+          tls:
+          - hosts:
+            - ${ci_event_listerner_ingress_host}
+            secretName: sample-ci-el-ingress-tls
+          rules:
+          - host: ${ci_event_listerner_ingress_host}
+            http:
+              paths:
+              - path: /
+                pathType: Prefix
+                backend:
+                  service:
+                    name: el-sample-ci-event-listener
+                    port:
+                      name: http-listener
+      target:
+        kind: Ingress
+        name: sample-ci-el-ingress
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
